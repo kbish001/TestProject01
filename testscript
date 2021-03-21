@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+
+/* *************POKER DICE ***************
+
+Creates 5 dice with A, K, Q, J, 10, 9.
+Dice all roll.
+Roll gives results of each of the 5 dice.
+
+*************POKER DICE *************** */
+
+function Die(sides) {
+this.sides = sides;
+
+this.values = [];
+for (i= 0; i<this.sides; i++)
+{this.values[i]=i;}
+
+this.roll = function () {
+var showing = Math.ceil(Math.random()*this.sides);
+return this.values[showing];
+};
+
+var pokerSide = ["A", "K", "Q", "J", "10","9"];
+this.poker = function () {
+for (i= 0; i<this.sides; i++)
+{this.values[i] = pokerSide[i];}
+};
+
+
+var myDie = [];
+
+for (c=0; c<5; c++){
+myDice[c] = new Die(5); 
+myDice[c].poker();
+}
+
+var output = "";
+for (k = 0; k< 5; k++){
+output+=myDice[k].roll();
+output+=" ";
+}
+
+alert(output);
+
+</script>
+
+
+</body>
+</html>
+
